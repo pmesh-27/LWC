@@ -1,0 +1,44 @@
+<template>
+    <div class='slds-box' >
+        <lightning-combobox
+        name="ActID"
+        label="Select Account"
+        value={actList.value}
+        placeholder="Select Account"
+        options={actList}
+        onchange={selectHandler}></lightning-combobox>
+        
+    </div>
+    <div class="slds-box" style="background-color:aqua;">
+        <template if:true={conList.data}>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <template for:each={conList.data} for:item="con">
+                    <div class="slds-col slds-size_1-of-3" key={con.id}>
+                        <div if:true={con.AccountId}>
+                            <lightning-card title={con.Account.Name}>
+                                <lightning-button variant="brand" label="View Details" slot="actions" value={con.Id}
+                                onclick={detailHandler}></lightning-button>
+                                <p>Name : {con.name}</p>
+                                <p>Phone : {con.Phone}</p>
+                                <p>Email : {con.Email}</p>
+                                <p slot="footer">Contact Details</p>
+                            </lightning-card>
+                        </div>
+                        <div if:false={con.AccountId}>
+                            <lightning-card title="Contact Details">
+                                <lightning-button variant="brand" label="View Details" slot="actions" value={con.Id} onclick={detailHandler}></lightning-button>
+                                <p>Name : {con.name}</p>
+                                <p>Phone : {con.Phone}</p>
+                                <p>Email : {con.Email}</p>
+                                <p slot="footer">Contact Details</p>
+                            </lightning-card>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:false={conList.Data}>
+            <h1>Error in retrieving data....</h1>
+        </template>
+    </div>
+</template>

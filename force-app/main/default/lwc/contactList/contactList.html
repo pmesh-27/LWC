@@ -1,0 +1,54 @@
+<!--<template>
+    <div class='slds-box'>
+        <h1>Contact Details</h1>
+        <template for:each={ContactList} for:item="con">
+         <lightning-card key={con.id} title="Contact info">
+          <p class='slds-p-horizontal-small'>
+             Name : {con.name} <br/>
+             Contact : {con.contact} <br/>
+             Age : {con.age}<br/>
+        </p>
+        <p slot="footer" align="left">Email: {con.email}</p>
+
+         </lightning-card>
+
+
+
+        </template>
+         
+    </div>
+</template>-->
+
+
+
+
+
+<template>
+
+    <div class="slds-box" style="background-color: blanchedalmond;">
+
+        <ul>
+
+    <template iterator:con={ContactList}>
+
+        <div if:true={con.first} key={con.value.id} class="firstElem"></div>
+
+        <li key={con.value.id}>
+
+            {con.index} -> {con.value.firstName}
+
+            {con.value.lastname} <br/>
+
+            {con.value.email}
+
+        </li>
+
+        <div if:true={con.last} key={con.value.id} class="lastElem"></div>
+
+    </template>
+
+</ul>
+
+</div>
+
+</template>

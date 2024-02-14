@@ -1,0 +1,7 @@
+.firstElem{
+    border-top: 2px solid black;
+}
+
+.lastElem{
+    border-bottom: 2px solid black;
+}

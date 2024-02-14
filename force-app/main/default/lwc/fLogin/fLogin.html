@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-grid_vertical-align-center" style="height: 100vh;">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3 slds-box slds-theme_default slds-m-around_medium">
+            <div class="slds-panel slds-panel_docked slds-panel_docked-left slds-is-open" aria-hidden="false">
+                <div class="slds-panel__body">
+                    <h2 class="slds-text-heading_medium">Login</h2>
+                    <form class="slds-form" role="form" onsubmit={handleLogin}>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="username">Username</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="username" class="slds-input" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="password">Password</label>
+                            <div class="slds-form-element__control">
+                                <input type="password" id="password" class="slds-input" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <button type="submit" class="slds-button slds-button_brand">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="slds-panel__footer">
+                    <p>Don't have an account? <a href="#" onclick={navigateToSignup}>Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

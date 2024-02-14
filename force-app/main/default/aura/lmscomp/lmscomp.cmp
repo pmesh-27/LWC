@@ -1,0 +1,4 @@
+<aura:component>
+<lightning:button onclick="{!c.handleClick}"/>
+<lightning:messageChannel type="myCh__c" aura:id="MMC"/>
+</aura:component>	

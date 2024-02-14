@@ -1,0 +1,10 @@
+<template>
+    <h3>I am the parent component</h3>
+    <lightning-button label="Show Child" variant="button" onclick={showChild}></lightning-button>
+    <lightning-button label="Hide Child" variant="button" onclick={hideChild}></lightning-button>
+    <div lwc:if={isChildShown}>
+
+
+    <c-lifecycleex></c-lifecycleex>
+    </div>
+</template>

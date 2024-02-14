@@ -1,0 +1,23 @@
+<template>
+    <div class="rating">
+        <template if:true={isRatingSelected}>
+            <template for:each={ratingOptions} for:item="option">
+                <div key={option} onclick={handleRatingClick} data-rating={option}>
+                    <lightning-icon icon-name={selectedRating >= option ? 'utility:favorite' : 'utility:favorite_border'} size="small"></lightning-icon>
+                    ★
+                </div>
+            </template>
+            
+            <div class="selected-rating">
+                <p>{selectedRatingMessage}</p>
+            </div>
+        </template>
+        <template if:false={isRatingSelected}>
+            <button class="rating-button" onclick={askForRating} data-type="food">Rate Food</button>
+            <button class="rating-button" onclick={askForRating} data-type="restaurant">Rate Restaurant</button>
+        </template>
+    </div>
+    
+    
+</template>
+

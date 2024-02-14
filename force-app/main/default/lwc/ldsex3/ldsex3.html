@@ -1,0 +1,15 @@
+<template>
+    <div class='slds-box' style="background-color:aliceblue;color:blue">
+        <lightning-messages></lightning-messages>
+        <lightning-record-form
+        object-api-name={objName}
+        onsuccess={successHandler}
+        
+        columns="2"
+        mode="edit"
+        record-id={recordId}
+        
+        ></lightning-record-form>
+    </div>
+</template>
+ 

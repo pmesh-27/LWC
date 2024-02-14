@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Contact Details">
+        <div if:true={contact.data}>
+            Name: {contact.data.Name}<br/>
+            Email: {contact.data.Email}<br/>
+            Phone: {contact.data.Phone}
+        </div>
+        <div if:true={contact.error}>
+            There was an error while fetching the data
+            Error: {contact.error}
+        </div>
+        <lightning-button onclick={alertHandler} label="OK">
+        </lightning-button>
+     </lightning-card>
+</template>

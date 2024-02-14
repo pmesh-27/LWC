@@ -1,0 +1,33 @@
+<template>
+
+    <lightning-input label="Name" placeholder="Enter the Name" onchange={changeHandler}></lightning-input>
+
+    <lightning-button label="Show Stage" onclick={show}></lightning-button>
+
+    <lightning-card title="Apex Wire Property">
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={opportunites.data}>
+
+                <template for:each={opportunites.data} for:item="opp">
+
+                    <div class="slds-box slds-box_xx-small" key={opp.id}>
+
+                        <p><strong>Name : </strong>{opp.Name}</p>
+
+                        <p><strong>Stage Name : </strong>{opp.StageName}</p>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+ 
+
+        </div>
+
+    </lightning-card>
+
+</template>

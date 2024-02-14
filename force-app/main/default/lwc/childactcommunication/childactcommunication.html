@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-box">
+        <lightning-combobox
+        name="ActId"
+        label="select Account"
+        value={actList.value}
+        placeholder="Select Account"
+        options={actList}
+        onchange={selectHandler}></lightning-combobox>
+    </div>
+</template>

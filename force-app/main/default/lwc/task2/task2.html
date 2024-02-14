@@ -1,0 +1,8 @@
+<template>
+    <lightning-card class="slds-box">
+    <lightning-input label="Enter Account Record ID" type="text" value={accountId} 
+   onchange={changeHandler}></lightning-input><br/>
+    <lightning-button label="Navigate" variant="brand" onclick={navToAccount}></lightning-button><br/>
+    <p class="error-message">{errorMessage}</p>
+    </lightning-card>
+   </template>

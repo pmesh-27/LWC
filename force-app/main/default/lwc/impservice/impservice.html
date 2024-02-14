@@ -1,0 +1,11 @@
+<template>
+    <lightning-button label='Click on me' onclick={clickHandler}></lightning-button>
+        <div class='slds-box' style="background-color:white">
+            <p lwc:if={actRecord}>
+                Account Name : {actRecord.Name} <br>
+                Rating : {actRecord.Rating} <br>
+                Industry : {actRecord.Industry} <br>
+               
+            </p>
+        </div>
+</template>

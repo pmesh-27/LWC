@@ -1,0 +1,8 @@
+<template>
+    <template if:true={showLogin}>
+        <c-f-login onsignup={handleNavigateToSignup}></c-f-login>
+    </template>
+    <template if:false={showLogin}>
+        <c-f-signup onlogin={handleNavigateToLogin}></c-f-signup>
+    </template>
+</template>

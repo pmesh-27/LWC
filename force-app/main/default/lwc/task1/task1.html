@@ -1,0 +1,23 @@
+<template>
+    <template if:true={categories}>
+    <div class="ordered-products">
+    <template if:true={categories.length}>
+    <template for:each={categories} for:item="category">
+    <div key={category.categoryName} style="color:chocolate;font-size:24px">
+    <b>{category.categoryName}</b>
+    <div style="color:aqua;font-size:14px">
+    <ul>
+    <template for:each={category.products} for:item="product">
+    <li key={product.productId}>{product.productName}</li>
+    </template>
+    </ul>
+    </div>
+    </div>
+    </template>
+    </template>
+    <template if:false={categories.length}>
+    <p>No ordered products to display.</p>
+    </template>
+    </div>
+    </template>
+   </template>

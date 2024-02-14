@@ -1,0 +1,71 @@
+div {
+    background-image: url('https://th.bing.com/th/id/R.dd5d9fbdd03a3b47d21baa8633231e67?rik=a3iMyOmV0XwEwA&riu=http%3a%2f%2fwww.baltana.com%2ffiles%2fwallpapers-2%2fFood-HD-Wallpapers-04864.jpg&ehk=oCGq87EnzGa53wpyGPk3aNhI03hKYPPWLQVzqCKdPe0%3d&risl=&pid=ImgRaw&r=0');
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* For the search box */
+:host {
+    --bg: #e3e4e8;
+    --fg: #17181c;
+    --input: #ffffff;
+    --primary: #255ff4;
+    --dur: 1s;
+}
+ 
+.container {
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+ 
+.search-box {
+    position: relative;
+    align-self: center;
+    margin-top: 1rem;
+}
+ 
+.input-search {
+    background: var(--input);
+    border-radius: 0.25rem;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--fg);
+    justify-content: flex-end;
+}
+ 
+.btn-search {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+ 
+footer {
+    background-color: var(--fg);
+    color: var(--bg);
+    text-align: center;
+    padding: 1rem 0;
+}
+ 
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+ 
+@media (prefers-color-scheme: dark) {    
+    :host {
+        --bg: #17181c;
+        --fg: #e3e4e8;
+        --input: #2e3138;
+        --primary: #5583f6;
+    }
+}

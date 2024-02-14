@@ -1,0 +1,17 @@
+<template>
+
+    <template for:each={contact} for:item="con">
+
+        <lightning-card key={con.id} title="Contact info">
+
+            <p class='slds-p-horizantal-small'>
+
+                <c-myChild4 contact={con}></c-myChild4>
+
+            </p>
+
+        </lightning-card>
+
+    </template>
+
+</template>

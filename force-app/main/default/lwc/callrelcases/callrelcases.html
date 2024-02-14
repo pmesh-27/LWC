@@ -1,0 +1,57 @@
+<template>
+<div class="slds-box">
+    <lightning-combobox
+    name="ActId"
+    label="select Account"
+    value={actList.value}
+    placeholder="Select Account"
+    options={actList}
+    onchange={selectHandler}></lightning-combobox>
+</div>
+<div class="slds-box" style="background-color: azure;">
+    <template if:true={caseList.data}>
+        <div class="slds-grid slds-wrap slds-gutters">
+            <template for:each={caseList.data} for:item="cas">
+                <div class="slds-col slds-size_1-of-3" key={cas.id}>
+                    <div if:true={cas.AccountId}>
+                        <lightning-card title={cas.AccountId}>
+                            <template if:false={cas.IsClosed}>
+                                <lightning-button
+                                    variant="brand"
+                                    label="Close Case"
+                                    slot="actions"
+                                    value={cas.Id}
+                                    onclick={closeCaseHandler}
+                                ></lightning-button>
+                            </template>
+                            <p>CaseNumber : {cas.CaseNumber}</p>
+                            <p>Status : {cas.Status}</p>
+                            <p>Case Origin : {cas.Origin}</p>
+                            <p slot="footer">Case Details</p>
+                        </lightning-card>
+                    </div>
+                    <div if:false={cas.AccountId}>
+                        <lightning-card title="Case Details">
+                            <template if:false={cas.IsClosed}>
+                                <lightning-button
+                                    variant="brand"
+                                    label="Close Case"
+                                    slot="actions"
+                                    value={cas.Id}
+                                    onclick={closeCaseHandler}
+                                ></lightning-button>
+                            </template>
+                            <p>CaseNumber : {cas.CaseNumber}</p>
+                            <p>Status : {cas.Status}</p>
+                            <p>Case Origin : {cas.Origin}</p>
+                            <p slot="footer">Case Details</p>
+                        </lightning-card>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+
+
+</div>
+</template>
